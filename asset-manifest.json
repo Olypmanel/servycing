@@ -1,16 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.623b7ba5.css",
-    "main.js": "/static/js/main.c85da133.js",
+    "main.js": "/static/js/main.9ef2858c.js",
     "static/js/787.9760d5ec.chunk.js": "/static/js/787.9760d5ec.chunk.js",
+    "static/media/city.jpg": "/static/media/city.e0c5c5cc6800e2f83890.jpg",
+    "static/media/art.jpg": "/static/media/art.73e331ca1cc8d7a7288c.jpg",
+    "static/media/newyork.jpg": "/static/media/newyork.fcddc577f750dfc1378f.jpg",
+    "static/media/mountain.jpg": "/static/media/mountain.7524c997242f6393f96f.jpg",
+    "static/media/landscape.jpg": "/static/media/landscape.1b78659e37d2bc90615f.jpg",
     "static/media/fashion.jpg": "/static/media/fashion.21e6702455c804ba04d2.jpg",
+    "static/media/mountainshine.jpg": "/static/media/mountainshine.acdbb675b6cd83ec824b.jpg",
     "index.html": "/index.html",
     "main.623b7ba5.css.map": "/static/css/main.623b7ba5.css.map",
-    "main.c85da133.js.map": "/static/js/main.c85da133.js.map",
+    "main.9ef2858c.js.map": "/static/js/main.9ef2858c.js.map",
     "787.9760d5ec.chunk.js.map": "/static/js/787.9760d5ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.623b7ba5.css",
-    "static/js/main.c85da133.js"
+    "static/js/main.9ef2858c.js"
   ]
 }

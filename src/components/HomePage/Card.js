@@ -1,39 +1,44 @@
-import axios from 'axios';
 import React, {useEffect, useState} from 'react'
+import axios from 'axios';
 import styled from 'styled-components';
 import Button from '../../GlobalContainers/Button';
 import { deviceSize } from '../../GlobalContainers/Responsive';
 import ServiceCardComponent from './Service';
+import altData from '../../images_pro/altData';
 const ContentContainer = styled.div`
 width: 100%;
-max-width : ${deviceSize.lapTop}px;
+max-width : ${deviceSize.laptop}px;
 display: flex;
 flex-direction : column;
 `;
-const buttonStyle = {
- contents : "view more",
- margin : 'auto',
- topMargin : 1,
- bottomMargin: 10,
- weight : 300,
- width : 8
-}
 
-const WarningText = styled.div`
-color : red;
-font-size : 1.5rem;
-font-weight: 800;
-`;
+
 export const CardWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
 // grid-gap: 1rem;
 justify-content : center;
+@media screen and (max-width : ${deviceSize.mobile}px){
+ display : flex;
+ overflow : scroll hidden;
+ width : 100%;
+ &::-webkit-scrollbar {
+display : none;
+ }
+}
 `;
 const InnerPageTitle = styled.h2`
 width : 80%;
 margin: 2rem auto;
 `;
+const buttonStyle = {
+ contents : "view more",
+ margin : 'auto',
+ topMargin : 1,
+ bottomMargin: 5,
+ weight : 300,
+ width : 8
+}
 export const ServiceCards = (props) => {
 
 const [cardData, setCardData] = useState([])
@@ -42,19 +47,18 @@ const offeredServices = async () => {
  .catch(error => console.log("this is an error of "+ error))
  if (response) {
 setCardData(response.data)
-console.log(response.data)
  }}
  useEffect(() => {
  offeredServices()
  },  [])
- const noCardData = !cardData || cardData.length === 0
-
+ const noCardData = !cardData || cardData.length === 0 
+const altCardData = altData.services
 return (
 <ContentContainer>
 <InnerPageTitle>Most used services and more</InnerPageTitle>
 <CardWrapper>
 {noCardData ? 
- <WarningText>No service available yet</WarningText>    :
+altCardData.map(item => <ServiceCardComponent {...item} key={item.id} />) :
 cardData.map(item => <ServiceCardComponent {...item} key={item.id} />)}
  </CardWrapper>
  <Button  {...buttonStyle} />

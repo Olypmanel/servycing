@@ -47,11 +47,11 @@ margin-right: 7px;
 
 export const NavBar = (props) => {
  return(
-<NavBarContainer>
+<NavBarContainer style={{borderBottom : props.isMobile && "solid 0.1px rgba(255, 255,255, 0.1)"}}>
 <Logo  fontSize={1} width={2} height={2} />
 <NavigatorContainer>
  <Anchor>specialist portal</Anchor>
-<LinkSeparator />
+{!props.isMobile && <LinkSeparator />}
  <Button contents={ <Anchor>register</Anchor>}
   weight="normal"/>
  <Anchor>login</Anchor>

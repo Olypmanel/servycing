@@ -4,15 +4,22 @@ import Logo from '../../GlobalContainers/Logo/Logo';
 import { LogoContainer, SideImageContainer, SloganText } from './TopSection';
 // import adImg from "../../images_pro/handshake.jpg"
 import Button from '../../GlobalContainers/Button';
+import { useMediaQuery } from 'react-responsive';
+import { deviceSize } from '../../GlobalContainers/Responsive';
 
 export const TopContainer = styled.div`
 background : rgb(2, 62, 62);
+margin-bottom : 3rem;
   width : 100%;
   display: flex;
 height: 500px;
   justify-content: center;
   align-items : center;
   overflow: hidden;
+  @media screen and (max-width : ${deviceSize.mobile}px) {
+    flex-direction : column;
+    min-height : 500px;
+  }
 `;
 const AdTexts = styled(SloganText)`
 font-size :1.5rem;
@@ -27,12 +34,16 @@ const logoAdjust = {
   height:3,
   marginBottom: 0.6
 }
+
+export const Specialist = (props) => {
+const isMobile = useMediaQuery({maxWidth : deviceSize.mobile})
 const buttonAdjust = {
   contents : 'join as specialist',
-  fontSize :0.8
+  fontSize :0.8,
+  width : isMobile && 10,
+  fontSize : 0.8
   
 }
-export const Specialist = (props) => {
  return(
  <TopContainer>
 <LogoContainer>

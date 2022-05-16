@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { deviceSize } from '../../GlobalContainers/Responsive';
 const CardTopContainer = styled.section`
 width : 100%;
 margin: auto;
@@ -14,6 +15,9 @@ overflow : hidden;
   box-shadow : rgba(0,0,0,0.5) 2px 2px 10px;
   margin: 0.5rem;
   margin-bottom : 1.3rem;
+  @media screen and (max-width : ${deviceSize.mobile}px) {
+    min-width : 200px;
+  }
 `;
 const CardImgContainer  = styled.div`
 width: 100%;

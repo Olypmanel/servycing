@@ -4,6 +4,9 @@ import TopSection, { TopBackgroundFilter, TopSectionContainer } from "./TopSecti
 import styled from 'styled-components';
 import  ServiceCards  from "./Card";
 import Specialist from "./specialistAd";
+import Footer from "../../GlobalContainers/Footer";
+import { useMediaQuery } from "react-responsive";
+import { deviceSize } from "../../GlobalContainers/Responsive";
 export const PageContainer = styled.main`
   width: 100%;
   height: auto;
@@ -22,13 +25,13 @@ export const InnerPageContainer = styled.section`
 
 
 export const Home = (props) => {
-
-// const Cards = items.map()
+const isMobile = useMediaQuery({maxWidth : deviceSize.mobile})
+console.log("Window : " +window.innerWidth )
 return (
  <PageContainer>
    <TopSectionContainer>
 <TopBackgroundFilter>
- <NavBar /> 
+ <NavBar isMobile={isMobile}/> 
  <TopSection />
  </TopBackgroundFilter>
   </TopSectionContainer>
@@ -38,6 +41,9 @@ return (
    <InnerPageContainer>
     <Specialist />
      </InnerPageContainer>
+     <InnerPageContainer>
+       <Footer isMobile={isMobile}/>
+       </InnerPageContainer>
  </PageContainer>
 
  )
